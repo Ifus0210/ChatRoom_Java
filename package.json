@@ -1,0 +1,18 @@
+{
+  "name": "webchat",
+  "version": "1.0.0",
+  "description": "실시간 채팅 애플리케이션",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "dependencies": {
+    "eta": "^3.5.0",
+    "express": "^4.21.2",
+    "socket.io": "^4.8.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  }
+}

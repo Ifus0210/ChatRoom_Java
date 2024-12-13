@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebChat</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-header">
+            <h1>WebChat</h1>
+            <div class="user-count">접속자 수: <span id="userCount">0</span></div>
+        </div>
+        
+        <div class="chat-main">
+            <div class="users-list">
+                <h2>접속자 목록</h2>
+                <ul id="usersList"></ul>
+            </div>
+            
+            <div class="chat-messages">
+                <div id="messageArea" class="message-area"></div>
+                
+                <div class="message-input">
+                    <input type="text" id="messageInput" placeholder="메시지를 입력하세요...">
+                    <button id="sendButton">전송</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/main.js"></script>
+</body>
+</html>
