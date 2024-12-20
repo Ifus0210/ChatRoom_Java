@@ -9,7 +9,7 @@ const app = express();
 const server = http.createServer(app);
 const io = new Server(server);
 
-// Eta 템플릿 엔진 설정
+// Eta template engine configuration
 const viewsPath = path.join(__dirname, 'views');
 const eta = new Eta({
     views: viewsPath,
@@ -31,18 +31,18 @@ app.engine('eta', (filePath, options, callback) => {
 app.set('view engine', 'eta');
 app.set('views', viewsPath);
 
-// 정적 파일 제공
+// Serve static files
 app.use(express.static(path.join(__dirname, 'public')));
 
-// 라우트 설정
+// Route configuration
 app.get('/', (req, res) => {
     res.render('layouts/main');
 });
 
-// Socket.IO 초기화
+// Initialize Socket.IO
 initializeSocket(io);
 
-// 서버 시작
+// Start server
 const PORT = process.env.PORT || 3000;
 server.listen(PORT, () => {
     console.log(`http://localhost:${PORT}`);

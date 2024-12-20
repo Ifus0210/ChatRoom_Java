@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,12 +10,12 @@
     <div class="chat-container">
         <div class="chat-header">
             <h1>WebChat</h1>
-            <div class="user-count">접속자 수: <span id="userCount">0</span></div>
+            <div class="user-count">Users Online: <span id="userCount">0</span></div>
         </div>
         
         <div class="chat-main">
             <div class="users-list">
-                <h2>접속자 목록</h2>
+                <h2>Online Users</h2>
                 <ul id="usersList"></ul>
             </div>
             
@@ -23,8 +23,8 @@
                 <div id="messageArea" class="message-area"></div>
                 
                 <div class="message-input">
-                    <input type="text" id="messageInput" placeholder="메시지를 입력하세요...">
-                    <button id="sendButton">전송</button>
+                    <input type="text" id="messageInput" placeholder="Type a message...">
+                    <button id="sendButton">Send</button>
                 </div>
             </div>
         </div>

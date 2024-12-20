@@ -1,24 +1,24 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Socket.IO 연결
+    // Socket.IO connection
     const socket = io();
 
-    // DOM 요소
+    // DOM elements
     const messageArea = document.getElementById('messageArea');
     const messageInput = document.getElementById('messageInput');
     const sendButton = document.getElementById('sendButton');
     const usersList = document.getElementById('usersList');
     const userCount = document.getElementById('userCount');
 
-    // 사용자 이름 입력
+    // Get username
     let username = null;
     while (!username) {
-        username = prompt('닉네임을 입력하세요:');
+        username = prompt('Enter your nickname:');
     }
 
-    // 서버에 접속 알림
+    // Notify server of user join
     socket.emit('user join', username);
 
-    // 메시지 전송 함수
+    // Message send function
     function sendMessage() {
         const message = messageInput.value.trim();
         if (message) {
@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // 이벤트 리스너
+    // Event listeners
     sendButton.addEventListener('click', sendMessage);
     messageInput.addEventListener('keypress', (e) => {
         if (e.key === 'Enter') {
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // 메시지 수신 처리
+    // Message receive handler
     socket.on('chat message', (data) => {
         const messageElement = document.createElement('div');
         messageElement.className = `message ${data.username === username ? 'sent' : 'received'}`;
@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
         messageArea.scrollTop = messageArea.scrollHeight;
     });
 
-    // 사용자 목록 업데이트
+    // Update user list
     socket.on('users update', (users) => {
         usersList.innerHTML = '';
         users.forEach(user => {
@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
         userCount.textContent = users.length;
     });
 
-    // 시스템 메시지 처리
+    // System message handler
     socket.on('system message', (message) => {
         const messageElement = document.createElement('div');
         messageElement.className = 'message system';
