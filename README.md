@@ -13,8 +13,8 @@ It supports efficient communication through intuitive UI and real-time message d
 ### Backend
 - Node.js
 - Express.js
-- Socket.IO (실시간 양방향 통신)
-- Eta (템플릿 엔진)
+- Socket.IO (Real-time bidirectional communication)
+- Eta (Template engine)
 
 ## ⚙ Key Features
 - Real-time 1:1 Chat
@@ -26,31 +26,31 @@ It supports efficient communication through intuitive UI and real-time message d
 
 ## 🚀 Installation and Execution
 ```bash
-# 저장소 클론
+# Clone repository
 git clone https://github.com/yourusername/OneRoomWebChat.git
 
-# 디렉토리 이동
+# Move to directory
 cd OneRoomWebChat
 
-# 의존성 설치
+# Install dependencies
 npm install
 
-# 개발 모드 실행
+# Run in development mode
 npm run dev
 
-# 프로덕션 모드 실행
+# Run in production mode
 npm start
 ```
 
 ## 💡 Project Structure
 ```
 OneRoomWebChat/
-├── public/          # 정적 파일
-├── server/          # 서버 관련 파일
-├── views/           # 템플릿 파일
-├── app.js          # 메인 서버 파일
-├── index.html      # 메인 페이지
-└── styles.css      # 스타일시트
+├── public/          # Static files
+├── server/          # Server-related files
+├── views/           # Template files
+├── app.js          # Main server file
+├── index.html      # Main page
+└── styles.css      # Stylesheet
 ```
 
 ## 🎯 Development Goals
